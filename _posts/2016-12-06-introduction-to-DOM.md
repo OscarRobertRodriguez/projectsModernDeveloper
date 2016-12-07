@@ -34,8 +34,8 @@ title:  "Introduction to DOM"
 </ul>
 
 
-<h1 style="color:#3CCAE6">Team Projects: status: not completed</h1>  
-
+<h1 style="color:#3CCAE6">Team Projects</h1>  
+<p>Status: Not Complete</p>
 <ul>
  <li><a href="https://github.com/moderndeveloper-students/coursework-OscarRobertRodriguez/blob/master/Course-06-Introduction-to-JavaScript-and-Modern-Web-Development/Chapter-2-Introduction-to-CSS/htmlAndCss-journal.md">Journal For Team Projects</a></li>
 </ul>
