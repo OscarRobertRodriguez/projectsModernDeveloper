@@ -7,16 +7,16 @@
 
 # Site settings
 title: Modern Projects
-email: your-email@domain.com
+email: oscarrobertrodriguez@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Gatok is a minimal jekyll theme with a 3d menu bar. 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/projectsModernDeveloper" # the subpath of your site, e.g. /blog
 url: "http://webjeda.com" # the base hostname & protocol for your site
 
 
 # Build settings
 markdown: kramdown
-baseurl: /projectsModernDeveloper
+baseurl: "/projectsModernDeveloper"
 permalink: /:title/
 
 disqus-shortname: webjeda-demo
