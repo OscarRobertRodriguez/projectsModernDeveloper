@@ -70,3 +70,6 @@ title:  "Introduction to CSS"
      <li><a href="https://oscarrobertrodriguez.github.io/encyclopediaEntries/">Live Link</a></li>
  </ul>
 </ul>
+
+<br>
+<br>
