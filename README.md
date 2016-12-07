@@ -1,3 +1,3 @@
-# Webjeda Gatok Theme
+# Modern Projects
 
-[**Demo**](http://webjeda.com/gatok)
+[**Live Link**](http://webjeda.com/gatok)
