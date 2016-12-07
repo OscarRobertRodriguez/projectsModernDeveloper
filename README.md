@@ -1,3 +1,3 @@
 # Modern Projects
 
-[**Live Link**](http://webjeda.com/gatok)
+[**Live Link**](https://oscarrobertrodriguez.github.io/projectsModernDeveloper/)
