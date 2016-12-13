@@ -217,49 +217,49 @@ To answer th first part of this project let's break down each class of error cod
 <p style="color:#3CCAE6"> Informational 1XX</p>
 
 * **100 Continue** 
-   * Description - to inform client that initial request has been received and has not been rejected by server
-   * Situation - You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
+   * to inform client that initial request has been received and has not been rejected by server. You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
 * **101 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
+   * sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too. You want to allow move from an incompatiable protocol version - not in common use.
 <p style="color:#3CCAE6"> Successful 2XX</p>
-* **200 Continue** 
-   * Description - to inform client that initial request has been received and has not been rejected by server
-   * Situation - You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
-* **202 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
-* **202 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
+* **200 OK** 
+   * is sent back if request has succeded. Any time you request information from a server and it is found and sent back
+* **201 Created**
+   *  when a request is made that ruesults in a new resource being created. You give a server your email and name the sever creates an object of you in its database
+* **202 Accepted**
+   *  request has been accepted but processing is not complete. You are submitting your payment at a website you have to wait for a couple of seconds you see prompts that say your payment has been received but you must wait a couple of seconds for it to finalize this would send a 202 first then it would send 201 thne a 200
 
 <p style="color:#3CCAE6"> Redirection 3XX</p>
-* **100 Continue** 
-   * Description - to inform client that initial request has been received and has not been rejected by server
-   * Situation - You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
-* **101 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
-* **202 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
+* **301 Move Permanently** 
+   * requested resource has moved to a new URI and should use one of the returned URI. Visit a link that redirects you to another site
+* **302 Found**
+   * requested resource is under a new URI tempory URI is returned and Should be given by the location field as a response
+* **303 See Other**
+   * uses the GET method to retrieve a source under a new URI
 <p style="color:#3CCAE6"> Client Error 4XX</p>
-* **100 Continue** 
-   * Description - to inform client that initial request has been received and has not been rejected by server
-   * Situation - You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
-* **101 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
-* **202 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
+* **400 Bad Request** 
+   * error returned by server bad sytax causes an error request must be fixed
+* **401 Unauthorized**
+   * requires user authentication
+* **403 Forbidden**
+   * sever understands request but is refusing to grant it will be returned if permissions are not allowed also 404 code can be returned instead
 <p style="color:#3CCAE6"> Server Error 5XX</p>
-* **100 Continue** 
-   * Description - to inform client that initial request has been received and has not been rejected by server
-   * Situation - You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time 
-* **101 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
-* **202 Switching Protocols**
-   * Description - sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too 
-   * Situation - You want to allow move from an incompatiable protocol version - not in common use.
+* **500 Internal server Error** 
+   *  error returned when sever encountered an unexpected condition
+* **502 Bad Gateway**
+   * error that is sent when the sever sends a invalid response 
+* **501 Not Implemented**
+   * error that is returned when the server does not support the required tools to carry out request 
+<p style="color:#3CCAE6">Unofficial Error Codes</p>
+* **495 SSL Certificate Required** 
+   * expansion of 400 code used when client does not provide certificate this could help in pinpoint why request is not working vs. getting a plain error code
+* **444 No Response**
+   * error returned when server does not return any information then connection is closed
+* **440 Login Time-out**
+   * error returned when the client has been on too long and must login again useful for sensitive data 
+* **509 Bandnwitdth Limit exceeded**
+   * error returned when bandwidth is exceeded might be useful if you run a site where data usage is payed for subscriptionally 
+* **450 Blocked by Window Parental Controls**
+   * Used by microsoft to let client know that Parental controls is blocking access to site. 
+
+
+   
