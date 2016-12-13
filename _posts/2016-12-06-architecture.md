@@ -4,8 +4,7 @@ title:  "Architecture of the Internet, the Web, and the Browser"
 ---
 <h1 style="color:#3CCAE6">Projects</h1>
 
-**1.** 
-<p style="color:#3CCAE6">Page Rendering</p>
+<h3 style="color:#3CCAE6">1. Page Rendering</h3>
 <p style="font-weight: bold">Analyze the HTML code given below and parse it to identify all the tokens. Create a DOM tree for the same HTML code. Is the HTML code malformed? Provide justification with proper reasoning. The HTML code to be used is given below.</p>
 
  <h2 style="color:#3CCAE6">Provided Code For Project:</h2>  
@@ -199,9 +198,7 @@ Should look like this :
 
 The way I found this out is using DevTools and seeing if there was any difference in the original code. It is a small error that for the chrome browser does not appear to affect the table in any noticeable way. 
 
-
-**2.**
-<p style="color:#3CCAE6">HTTP Status Codes Project:</p>
+<h3 style="color:#3CCAE6">2. HTTP Status Codes:</h3>
 <p style="font-weight: bold">HTTP Status Codes are grouped into five specific classes with each class’ first digit specifying the response type. All the HTTP Status/Response codes are listed on the following W3C resource: HTTP Status Codes.</p>
 
 Using this information, list three status codes from each class, starting from 1XX to 5XX, along with a brief description and the situation in which it will be returned.
