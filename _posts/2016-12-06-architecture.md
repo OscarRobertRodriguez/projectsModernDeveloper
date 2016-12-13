@@ -4,8 +4,7 @@ title:  "Architecture of the Internet, the Web, and the Browser"
 ---
 <h1 style="color:#3CCAE6">Projects</h1>
 
-**1.** 
-<p style="color:#3CCAE6">Page Rendering</p>
+<h3 style="color:#3CCAE6">1. Page Rendering</h3>
 <p style="font-weight: bold">Analyze the HTML code given below and parse it to identify all the tokens. Create a DOM tree for the same HTML code. Is the HTML code malformed? Provide justification with proper reasoning. The HTML code to be used is given below.</p>
 
  <h2 style="color:#3CCAE6">Provided Code For Project:</h2>  
@@ -199,9 +198,7 @@ Should look like this :
 
 The way I found this out is using DevTools and seeing if there was any difference in the original code. It is a small error that for the chrome browser does not appear to affect the table in any noticeable way. 
 
-
-**2.**
-<p style="color:#3CCAE6">HTTP Status Codes Project:</p>
+<h3 style="color:#3CCAE6">2. HTTP Status Codes:</h3>
 <p style="font-weight: bold">HTTP Status Codes are grouped into five specific classes with each class’ first digit specifying the response type. All the HTTP Status/Response codes are listed on the following W3C resource: HTTP Status Codes.</p>
 
 Using this information, list three status codes from each class, starting from 1XX to 5XX, along with a brief description and the situation in which it will be returned.
@@ -264,4 +261,79 @@ To answer this project let's break down each class of error codes for 1XX to 5XX
    * Used by microsoft to let client know that Parental controls is blocking access to site. 
 
 
-   
+<h3 style="color:#3CCAE6">3. DNS:</h3>
+**We looked at different types of DNS records such as A, CNAME, MX, TXT, etc. In this task, you will research the following types of records: HINFO, ISDN, NS, PTR, and SOA. Create a table with the following columns to provide the information for the above newly listed record types: DNS Record Type, Full form, Description, and Example.**
+<br>
+<span class="label label-warning">Answer:</span><br>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-7fle{font-weight:bold;background-color:#efefef;text-align:center;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-ccb6{font-weight:bold;background-color:#efefef;color:#333333;text-align:center;vertical-align:top}
+.tg .tg-i81m{background-color:#ffffff;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-7fle">DNS Record Types</th>
+    <th class="tg-7fle">Full Form</th>
+    <th class="tg-7fle">Description</th>
+    <th class="tg-ccb6">Example</th>
+  </tr>
+  <tr>
+    <td class="tg-i81m">HINFO</td>
+    <td class="tg-i81m">Host information</td>
+    <td class="tg-i81m">specifies the host / server's type of CPU and operating system</td>
+    <td class="tg-i81m">;[name],[TTL] class HINFO,hardware,OS,IN,HINFO,Sparc-10,UNIX</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ISDN</td>
+    <td class="tg-yw4l">Integrated Services Digital Network</td>
+    <td class="tg-baqh">maps a domain name to a telephone number</td>
+    <td class="tg-yw4l">user@host#show interfaces br-1/0/3isdn-options {switch-type att5e;spid1 00108005555555;calling-number 18005555555;incoming-called-number 18883333456;tei-option power-up;static-tei-val 23;t310 15;}dialer-options {pool isdn-dialer-group priority 255;</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">NS</td>
+    <td class="tg-baqh">Authoritative name server</td>
+    <td class="tg-baqh">identify the DNS servers responsible for a zone</td>
+    <td class="tg-yw4l">id 55396<br>opcode QUERY<br>rcode NOERROR<br>flags QR RD RA<br>;QUESTION<br>moderndeveloper.com. IN NS<br>;ANSWER<br>moderndeveloper.com. 43199 IN NS ns2.mediatemple.net.<br>moderndeveloper.com. 43199 IN NS ns1.mediatemple.net.<br>;AUTHORITY<br>;ADDITIONAL</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">PTR</td>
+    <td class="tg-baqh">domain name pointer</td>
+    <td class="tg-baqh"> used to map IP addresses to domain names </td>
+    <td class="tg-yw4l">id 58648<br>opcode QUERY<br>rcode NOERROR<br>flags QR RD RA<br>;QUESTION<br>moderndeveloper.com. IN PTR<br>;ANSWER<br>;AUTHORITY<br>moderndeveloper.com. 1799 IN SOA ns1.mediatemple.net. dnsadmin.mediatemple.net. 2016110402 10800 3600 1209600 43200<br>;ADDITIONAL</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">SOA</td>
+    <td class="tg-baqh">Start of authority</td>
+    <td class="tg-yw4l">Name of primary DNS server and email address of responsible person</td>
+    <td class="tg-yw4l">id 9144<br>opcode QUERY<br>rcode NOERROR<br>flags QR RD RA<br>;QUESTION<br>moderndeveloper.com. IN SOA<br>;ANSWER<br>moderndeveloper.com. 43199 IN SOA ns1.mediatemple.net. dnsadmin.mediatemple.net. 2016110402 10800 3600 1209600 43200<br>;AUTHORITY<br>;ADDITIONAL</td>
+  </tr>
+</table>
+
+
+
+
+
+
+<h3 style="color:#3CCAE6">3. Network Topology:</h3>
+**In the discussion about Network Architecture, we looked at networks in which all the devices were connected to each other (mesh topography) and at how the introduction of a router created a hub (star topography). What other types of physical network topographies currently exist in the real world? List any three such topologies and specify their advantages, disadvantages, and any constraints in setting them up.**
+
+<span class="label label-warning">Answer:</span><br>
+
+<h3 style="color:#3CCAE6">Point-to-point Topology</h3>
+
+Link between two endpoints. The advantage over other setups is that it easy simple setup is there is a need for only one wire also the connection will have the best signal. The disadvantage is that if the wire is cut then there is no possible way to reconnect, all communication will be lost.
+
+<h3 style="color:#3CCAE6">Ring Topology</h3>
+
+Closed loop connection. You can visualize as a ring where data is transmited in one direction till it gets back to the starting node. Advantages are that all nodes are connected. The disadvantages are that if one node is not woring the data will not make it to all nodes. 
+
+
+
+<h3 style="color:#3CCAE6">Star Topology</h3>
+
+With this setup you have a central hub in the center with all other nodes connected to this central hub. Advantages to this setup is that every computer is indirectly connected and is easier than all other topologies to add additional nodes. The disadvantage is that it gives a singel point of failure.
