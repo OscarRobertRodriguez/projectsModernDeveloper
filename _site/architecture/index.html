@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Architecture of the Internet, the Web, and the Browser - Modern Projects</title>
+<meta property="og:title" content="Architecture of the Internet, the Web, and the Browser" />
+<meta name="description" content="Projects" />
+<meta property="og:description" content="Projects" />
+<link rel="canonical" href="http://webjeda.com/architecture/" />
+<meta property="og:url" content="http://webjeda.com/architecture/" />
+<meta property="og:site_name" content="Modern Projects" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-06T00:00:00-06:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Architecture of the Internet, the Web, and the Browser",
+    "datePublished": "2016-12-06T00:00:00-06:00",
+    "description": "Projects",
+    "url": "http://webjeda.com/architecture/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+  
+  <link rel="alternate" type="application/rss+xml" title="Modern Projects" href="http://webjeda.com/feed.xml">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="/css/bootstrap.css">
+         
+<style>
+          
+          body{overflow-x:hidden;overflow-y:auto;background-color:#222;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);background-repeat:repeat;width:103%}img{max-width:100%;margin-top:1em;margin-bottom:1em}.color-bar{margin-left:-10px;border:none;font-size:0px}.bar{border:none;display:inline-block;width:16.6667%;padding:0}.bar1{border-top:5px solid #3498db}.bar2{border-top:5px solid #e74c3c}.bar3{border-top:5px solid #2ecc71}.bar4{border-top:5px solid #f1c40f}.bar5{border-top:5px solid #95a5a6}.bar6{border-top:5px solid #9b59b6}.page-content{width:60%;margin:0 auto;border-left:2px solid #4fba6f;padding:0 20px 0 20px;box-shadow:-2px 0px 0px 0px rgba(24,228,33,0.22)}@media screen and (max-width: 600px){.page-content{width:100%;border:none;box-shadow:none}}.contents{background-color:#fff;min-height:800px;height:100%;width:100%;border-left:10px solid #f3f2f2}.menu-icon{display:block;position:fixed;height:30px;width:14px;background-image:url(/gatok/images/aayke.svg);top:500px}.post-list{list-style:none}.meny{padding:20px;overflow:auto}.menu-ul{list-style:none;padding-left:0}.menu-header{color:#fff}.meny-li{font-size:22px;line-height:1.8;color:#fff}.meny-li:hover{color:#3b97d3}.headline{display:inline;line-height:2;font-size:2.45em;text-shadow:0px 0px 1px}@media screen and (max-width: 600px){.headline{line-height:1;font-size:1.8em}}.mt20{margin-top:20px}.mb20{margin-bottom:20px}.highlight{background:#fff}.highlighter-rouge .highlight{background:#eef}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717}.highlight .k{font-weight:bold}.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000}.highlight .gd .x{color:#000}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000}.highlight .gi .x{color:#000}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaa}.highlight .gt{color:#a00}.highlight .kc{font-weight:bold}.highlight .kd{font-weight:bold}.highlight .kp{font-weight:bold}.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:teal}.highlight .nb{color:#0086B3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne{color:#900;font-weight:bold}.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#d14}.highlight .sc{color:#d14}.highlight .sd{color:#d14}.highlight .s2{color:#d14}.highlight .se{color:#d14}.highlight .sh{color:#d14}.highlight .si{color:#d14}.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc{color:teal}.highlight .vg{color:teal}.highlight .vi{color:teal}.highlight .il{color:#099}
+
+</style>
+
+</head>
+
+
+  <body>
+
+        <div class="meny">
+    <h2 class="menu-header">Navigation</h2>
+    <ul class="menu-ul">
+        <a href="/about/"><li class="meny-li">About</li></a>
+        <a href="/contact/"><li class="meny-li">Contact</li></a>
+        <a href="https://github.com/sharu725/gatok"><li class="meny-li">Project</li></a>
+        <a href="https://github.com/sharu725/gatok/archive/master.zip"><li class="meny-li">Download</li></a>
+        
+    </ul>
+    
+    <p style="color: #eee">Site Version 1.0</p>
+    
+</div>
+
+        <div class="menu-icon"></div>
+      <div class="contents">
+        <header class="site-header"><div class="color-bar"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="bar bar4"></div><div class="bar bar5"></div><div class="bar bar6"></div></div>
+<div class="row mt20 mb20">
+  <div class="col-sm-1"></div>
+   <div class="col-md-4"><a href="/"><svg class="headline" xmlns="http://www.w3.org/2000/svg" height="45" viewBox="0 0 84.5 53.8"><rect y="17.3" width="65.9" height="36.5" fill="#E64C3C"/><rect x="5.6" y="12.1" width="65.9" height="36.5" fill="#3B97D3"/><rect x="11.9" y="5.8" width="65.9" height="36.5" fill="#4FBA6F"/><rect x="18.6" width="65.9" height="36.5" fill="#F0C419"/></svg>&nbsp;&nbsp;&nbsp;<h1 class="headline">Modern Projects</h1></a></div>
+    <div class="col-sm-7"> </div>
+    
+</div>
+    
+
+</header>
+
+
+      <div class="page-content">
+          <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Architecture of the Internet, the Web, and the Browser</h1>
+    <p class="post-meta"><time datetime="2016-12-06T00:00:00-06:00" itemprop="datePublished">Dec 6, 2016</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 style="color:#3CCAE6">Projects</h1>
+
+<h3 style="color:#3CCAE6">1. Page Rendering</h3>
+<p style="font-weight: bold">Analyze the HTML code given below and parse it to identify all the tokens. Create a DOM tree for the same HTML code. Is the HTML code malformed? Provide justification with proper reasoning. The HTML code to be used is given below.</p>
+
+<h2 style="color:#3CCAE6">Provided Code For Project:</h2>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+ 
+ <span class="nt">&lt;head&gt;</span>
+ 
+  <span class="nt">&lt;title&gt;</span>
+ 
+  HTML5 Table Rendering
+ 
+  <span class="nt">&lt;/title&gt;</span>
+ 
+ <span class="nt">&lt;/head&gt;</span>
+ 
+ <span class="nt">&lt;body&gt;</span>
+ 
+  <span class="nt">&lt;h4&gt;</span>NFL Points Table<span class="nt">&lt;/h4&gt;</span>
+ 
+  <span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table1"</span><span class="nt">&gt;</span>
+ 
+   <span class="nt">&lt;thead&gt;</span>
+ 
+    <span class="nt">&lt;tr&gt;</span>
+ 
+    <span class="nt">&lt;th&gt;</span>NFL Franchise<span class="nt">&lt;/th&gt;</span>
+ 
+    <span class="nt">&lt;th&gt;</span>Wins<span class="nt">&lt;/th&gt;</span>
+ 
+    <span class="nt">&lt;th&gt;</span>Losses<span class="nt">&lt;/th&gt;</span>
+ 
+    <span class="nt">&lt;/tr&gt;</span>
+ 
+   <span class="nt">&lt;/thead&gt;</span>
+ 
+   <span class="nt">&lt;tbody&gt;</span>
+ 
+    <span class="nt">&lt;tr&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>Carolina Panthers<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>15<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;/tr&gt;</span>
+ 
+    <span class="nt">&lt;tr&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>Denver Broncos<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>12<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;/tr&gt;</span>
+ 
+    <span class="nt">&lt;tr&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>Dallas Cowboys<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;td&gt;</span>12<span class="nt">&lt;/td&gt;</span>
+ 
+    <span class="nt">&lt;/tr&gt;</span>
+ 
+   <span class="nt">&lt;/tbody&gt;</span>
+ 
+   <span class="nt">&lt;tfoot&gt;</span>
+ 
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;&lt;small&gt;</span>Official NFL League Standings 2015<span class="nt">&lt;/small&gt;&lt;/td&gt;</span>
+ 
+   <span class="nt">&lt;/tfoot&gt;</span>
+ 
+  <span class="nt">&lt;/table&gt;</span>
+ 
+ <span class="nt">&lt;/body&gt;</span>
+ 
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<h2 style="color:#3CCAE6">Code Rendered on Page: </h2>
+
+<html>
+ 
+ <head>
+ 
+  <title>
+ 
+  HTML5 Table Rendering
+ 
+  </title>
+ 
+ </head>
+ 
+ <body>
+ 
+  <h4>NFL Points Table</h4>
+ 
+  <table id="table1">
+ 
+   <thead>
+ 
+    <tr>
+ 
+    <th>NFL Franchise</th>
+ 
+    <th>Wins</th>
+ 
+    <th>Losses</th>
+ 
+    </tr>
+ 
+   </thead>
+ 
+   <tbody>
+ 
+    <tr>
+ 
+    <td>Carolina Panthers</td>
+ 
+    <td>15</td>
+ 
+    <td>1</td>
+ 
+    </tr>
+ 
+    <tr>
+ 
+    <td>Denver Broncos</td>
+ 
+    <td>12</td>
+ 
+    <td>4</td>
+ 
+    </tr>
+ 
+    <tr>
+ 
+    <td>Dallas Cowboys</td>
+ 
+    <td>4</td>
+ 
+    <td>12</td>
+ 
+    </tr>
+ 
+   </tbody>
+ 
+   <tfoot>
+ 
+    <td colspan="3"><small>Official NFL League Standings 2015</small></td>
+ 
+   </tfoot>
+ 
+  </table>
+ 
+ </body>
+ 
+</html>
+<p><br /></p>
+
+<p><span class="label label-warning">Answer:</span><br /></p>
+
+<p>The question first ask us to take all html tags and form a list of all the tokens.</p>
+
+<p style="color:#3CCAE6">Tokens:</p>
+
+<p><code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>,<code class="highlighter-rouge">&lt;head&gt;</code>,<code class="highlighter-rouge">&lt;title&gt;</code>,<code class="highlighter-rouge">HTML5 Table Rendering</code>,<code class="highlighter-rouge">&lt;/title&gt;</code>,<code class="highlighter-rouge">&lt;/head&gt;</code>,
+ <code class="highlighter-rouge">&lt;body&gt;</code>,<code class="highlighter-rouge">&lt;h4&gt;</code>,<code class="highlighter-rouge">NFL Points Table</code>,<code class="highlighter-rouge">&lt;/h4&gt;</code>,<code class="highlighter-rouge">&lt;table id="table1"&gt;</code>,<code class="highlighter-rouge">&lt;thead&gt;</code>,<code class="highlighter-rouge">&lt;tr&gt;</code>,<code class="highlighter-rouge">&lt;th&gt;</code>,<code class="highlighter-rouge">NFL Franchise</code>,<code class="highlighter-rouge">&lt;/th&gt;</code>,<code class="highlighter-rouge">&lt;th&gt;</code>,<code class="highlighter-rouge">Wins</code>,<code class="highlighter-rouge">&lt;/th&gt;</code>,<code class="highlighter-rouge">&lt;th&gt;</code>,<code class="highlighter-rouge">Losses</code>,<code class="highlighter-rouge">&lt;/th&gt;</code>,<code class="highlighter-rouge">&lt;/tr&gt;</code>,<code class="highlighter-rouge">&lt;/thead&gt;</code>,<code class="highlighter-rouge">&lt;/tbody&gt;</code>,<code class="highlighter-rouge">&lt;tr&gt;</code>,<code class="highlighter-rouge">&lt;/thead&gt;</code>,<code class="highlighter-rouge">&lt;tbody&gt;</code>,<code class="highlighter-rouge">&lt;tr&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">Carolina Panthers</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">15</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">1</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;/tr&gt;</code>,<code class="highlighter-rouge">&lt;tr&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">Denver Broncos</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">12</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">4</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;/tr&gt;</code>,<code class="highlighter-rouge">&lt;tr&gt;</code>, <code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">Dallas Cowboys</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">4</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;td&gt;</code>,<code class="highlighter-rouge">12</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;/tr&gt;</code>,<code class="highlighter-rouge">&lt;/tbody&gt;</code>,<code class="highlighter-rouge">&lt;tfoot&gt;</code>,<code class="highlighter-rouge">&lt;td colspan="3"&gt;</code>,<code class="highlighter-rouge">&lt;small&gt;</code>,<code class="highlighter-rouge">Official NFL League Standings 2015</code>,<code class="highlighter-rouge">&lt;/small&gt;</code>,<code class="highlighter-rouge">&lt;/td&gt;</code>,<code class="highlighter-rouge">&lt;/tfoot&gt;</code>,<code class="highlighter-rouge">&lt;/table&gt;</code>,<code class="highlighter-rouge">&lt;/body&gt;</code>,<code class="highlighter-rouge">&lt;/html&gt;</code></p>
+
+<p>Whoa that was a lot now let’s draw an image of this mapped similar to how it would appear in a DOM tree.</p>
+
+<p><img style="display:block; margin: 0 auto; width: 800px; height: 600px" src="../images/Dom.png" /></p>
+
+<p>To finish up this project let’s answer the final question as to whether this code is malformed. I would say that yes this code is malformed but in a small way in that on line 69 the td element is not surrounded by a tr element so :</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;&lt;small&gt;</span>Official NFL League Standings 2015<span class="nt">&lt;/small&gt;&lt;/td&gt;</span>
+</code></pre>
+</div>
+
+<p>Should look like this :</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"3"</span><span class="nt">&gt;&lt;small&gt;</span>Official NFL League Standings 2015<span class="nt">&lt;/small&gt;&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>    
+</code></pre>
+</div>
+
+<p>The way I found this out is using DevTools and seeing if there was any difference in the original code. It is a small error that for the chrome browser does not appear to affect the table in any noticeable way.</p>
+
+<h3 style="color:#3CCAE6">2. HTTP Status Codes:</h3>
+<p style="font-weight: bold">HTTP Status Codes are grouped into five specific classes with each class’ first digit specifying the response type. All the HTTP Status/Response codes are listed on the following W3C resource: HTTP Status Codes.</p>
+
+<p>Using this information, list three status codes from each class, starting from 1XX to 5XX, along with a brief description and the situation in which it will be returned.</p>
+
+<p>The second task is to explore unofficial codes which are not a part of the W3C recommendation. Some third-party services expand the 4XX error space. List any five such response codes and their significance.</p>
+
+<p><span class="label label-warning">Answer:</span><br /></p>
+
+<p>To answer this project let’s break down each class of error codes for 1XX to 5XX and list three for each section with a brief description and situation it will be returned in.</p>
+
+<h2 style="color:#3CCAE6">Error Codes:</h2>
+
+<p style="color:#3CCAE6"> Informational 1XX</p>
+
+<ul>
+  <li><strong>100 Continue</strong>
+    <ul>
+      <li>to inform client that initial request has been received and has not been rejected by server. You want to check that the server is going to accept your request as it may be in your favor to do so to save from errors and time</li>
+    </ul>
+  </li>
+  <li><strong>101 Switching Protocols</strong>
+    <ul>
+      <li>sent in response to Upgrade: request by the client, indicates the protocol the sever is switching too. You want to allow move from an incompatiable protocol version - not in common use.</li>
+    </ul>
+  </li>
+</ul>
+<p style="color:#3CCAE6"> Successful 2XX</p>
+<ul>
+  <li><strong>200 OK</strong>
+    <ul>
+      <li>is sent back if request has succeded. Any time you request information from a server and it is found and sent back</li>
+    </ul>
+  </li>
+  <li><strong>201 Created</strong>
+    <ul>
+      <li>when a request is made that ruesults in a new resource being created. You give a server your email and name the sever creates an object of you in its database</li>
+    </ul>
+  </li>
+  <li><strong>202 Accepted</strong>
+    <ul>
+      <li>request has been accepted but processing is not complete. You are submitting your payment at a website you have to wait for a couple of seconds you see prompts that say your payment has been received but you must wait a couple of seconds for it to finalize this would send a 202 first then it would send 201 thne a 200</li>
+    </ul>
+  </li>
+</ul>
+
+<p style="color:#3CCAE6"> Redirection 3XX</p>
+<ul>
+  <li><strong>301 Move Permanently</strong>
+    <ul>
+      <li>requested resource has moved to a new URI and should use one of the returned URI. Visit a link that redirects you to another site</li>
+    </ul>
+  </li>
+  <li><strong>302 Found</strong>
+    <ul>
+      <li>requested resource is under a new URI tempory URI is returned and Should be given by the location field as a response</li>
+    </ul>
+  </li>
+  <li><strong>303 See Other</strong>
+    <ul>
+      <li>uses the GET method to retrieve a source under a new URI</li>
+    </ul>
+  </li>
+</ul>
+<p style="color:#3CCAE6"> Client Error 4XX</p>
+<ul>
+  <li><strong>400 Bad Request</strong>
+    <ul>
+      <li>error returned by server bad sytax causes an error request must be fixed</li>
+    </ul>
+  </li>
+  <li><strong>401 Unauthorized</strong>
+    <ul>
+      <li>requires user authentication</li>
+    </ul>
+  </li>
+  <li><strong>403 Forbidden</strong>
+    <ul>
+      <li>sever understands request but is refusing to grant it will be returned if permissions are not allowed also 404 code can be returned instead</li>
+    </ul>
+  </li>
+</ul>
+<p style="color:#3CCAE6"> Server Error 5XX</p>
+<ul>
+  <li><strong>500 Internal server Error</strong>
+    <ul>
+      <li>error returned when sever encountered an unexpected condition</li>
+    </ul>
+  </li>
+  <li><strong>502 Bad Gateway</strong>
+    <ul>
+      <li>error that is sent when the sever sends a invalid response</li>
+    </ul>
+  </li>
+  <li><strong>501 Not Implemented</strong>
+    <ul>
+      <li>error that is returned when the server does not support the required tools to carry out request</li>
+    </ul>
+  </li>
+</ul>
+<p style="color:#3CCAE6">Unofficial Error Codes</p>
+<ul>
+  <li><strong>495 SSL Certificate Required</strong>
+    <ul>
+      <li>expansion of 400 code used when client does not provide certificate this could help in pinpoint why request is not working vs. getting a plain error code</li>
+    </ul>
+  </li>
+  <li><strong>444 No Response</strong>
+    <ul>
+      <li>error returned when server does not return any information then connection is closed</li>
+    </ul>
+  </li>
+  <li><strong>440 Login Time-out</strong>
+    <ul>
+      <li>error returned when the client has been on too long and must login again useful for sensitive data</li>
+    </ul>
+  </li>
+  <li><strong>509 Bandnwitdth Limit exceeded</strong>
+    <ul>
+      <li>error returned when bandwidth is exceeded might be useful if you run a site where data usage is payed for subscriptionally</li>
+    </ul>
+  </li>
+  <li><strong>450 Blocked by Window Parental Controls</strong>
+    <ul>
+      <li>Used by microsoft to let client know that Parental controls is blocking access to site.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="color:#3CCAE6">3. DNS:</h3>
+<p><strong>We looked at different types of DNS records such as A, CNAME, MX, TXT, etc. In this task, you will research the following types of records: HINFO, ISDN, NS, PTR, and SOA. Create a table with the following columns to provide the information for the above newly listed record types: DNS Record Type, Full form, Description, and Example.</strong>
+<br />
+<span class="label label-warning">Answer:</span><br /></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-7fle{font-weight:bold;background-color:#efefef;text-align:center;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-ccb6{font-weight:bold;background-color:#efefef;color:#333333;text-align:center;vertical-align:top}
+.tg .tg-i81m{background-color:#ffffff;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+
+<table class="tg">
+  <tr>
+    <th class="tg-7fle">DNS Record Types</th>
+    <th class="tg-7fle">Full Form</th>
+    <th class="tg-7fle">Description</th>
+    <th class="tg-ccb6">Example</th>
+  </tr>
+  <tr>
+    <td class="tg-i81m">HINFO</td>
+    <td class="tg-i81m">Host information</td>
+    <td class="tg-i81m">specifies the host / server's type of CPU and operating system</td>
+    <td class="tg-i81m">;[name],[TTL] class HINFO,hardware,OS,IN,HINFO,Sparc-10,UNIX</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ISDN</td>
+    <td class="tg-yw4l">Integrated Services Digital Network</td>
+    <td class="tg-baqh">maps a domain name to a telephone number</td>
+    <td class="tg-yw4l">user@host#show interfaces br-1/0/3isdn-options {switch-type att5e;spid1 00108005555555;calling-number 18005555555;incoming-called-number 18883333456;tei-option power-up;static-tei-val 23;t310 15;}dialer-options {pool isdn-dialer-group priority 255;</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">NS</td>
+    <td class="tg-baqh">Authoritative name server</td>
+    <td class="tg-baqh">identify the DNS servers responsible for a zone</td>
+    <td class="tg-yw4l">id 55396<br />opcode QUERY<br />rcode NOERROR<br />flags QR RD RA<br />;QUESTION<br />moderndeveloper.com. IN NS<br />;ANSWER<br />moderndeveloper.com. 43199 IN NS ns2.mediatemple.net.<br />moderndeveloper.com. 43199 IN NS ns1.mediatemple.net.<br />;AUTHORITY<br />;ADDITIONAL</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">PTR</td>
+    <td class="tg-baqh">domain name pointer</td>
+    <td class="tg-baqh"> used to map IP addresses to domain names </td>
+    <td class="tg-yw4l">id 58648<br />opcode QUERY<br />rcode NOERROR<br />flags QR RD RA<br />;QUESTION<br />moderndeveloper.com. IN PTR<br />;ANSWER<br />;AUTHORITY<br />moderndeveloper.com. 1799 IN SOA ns1.mediatemple.net. dnsadmin.mediatemple.net. 2016110402 10800 3600 1209600 43200<br />;ADDITIONAL</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">SOA</td>
+    <td class="tg-baqh">Start of authority</td>
+    <td class="tg-yw4l">Name of primary DNS server and email address of responsible person</td>
+    <td class="tg-yw4l">id 9144<br />opcode QUERY<br />rcode NOERROR<br />flags QR RD RA<br />;QUESTION<br />moderndeveloper.com. IN SOA<br />;ANSWER<br />moderndeveloper.com. 43199 IN SOA ns1.mediatemple.net. dnsadmin.mediatemple.net. 2016110402 10800 3600 1209600 43200<br />;AUTHORITY<br />;ADDITIONAL</td>
+  </tr>
+</table>
+
+<h3 style="color:#3CCAE6">3. Network Topology:</h3>
+<p><strong>In the discussion about Network Architecture, we looked at networks in which all the devices were connected to each other (mesh topography) and at how the introduction of a router created a hub (star topography). What other types of physical network topographies currently exist in the real world? List any three such topologies and specify their advantages, disadvantages, and any constraints in setting them up.</strong></p>
+
+<p><span class="label label-warning">Answer:</span><br /></p>
+
+<h3 style="color:#3CCAE6">Point-to-point Topology</h3>
+
+<p>Link between two endpoints. The advantage over other setups is that it easy simple setup is there is a need for only one wire also the connection will have the best signal. The disadvantage is that if the wire is cut then there is no possible way to reconnect, all communication will be lost.</p>
+
+<h3 style="color:#3CCAE6">Ring Topology</h3>
+
+<p>Closed loop connection. You can visualize as a ring where data is transmited in one direction till it gets back to the starting node. Advantages are that all nodes are connected. The disadvantages are that if one node is not woring the data will not make it to all nodes.</p>
+
+<h3 style="color:#3CCAE6">Star Topology</h3>
+
+<p>With this setup you have a central hub in the center with all other nodes connected to this central hub. Advantages to this setup is that every computer is indirectly connected and is easier than all other topologies to add additional nodes. The disadvantage is that it gives a singel point of failure.</p>
+
+  </div>
+
+</article>
+
+          </div>
+      </div>
+
+<footer class="site-footer">
+</footer>
+
+      </div>
+
+<!-- 3d menu js -->
+<script src="/js/meny.js"></script> 
+
+
+<!-- Script to load 3d menu -->
+<script>
+      var meny=Meny.create({menuElement:document.querySelector(".meny"),contentsElement:document.querySelector(".contents"),position:"left",height:200,width:230,angle:30,threshold:40,overlap:6,transitionDuration:"0.5s",transitionEasing:"ease",gradient:"rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.65) 100%)",mouse:!0,touch:!0});
+</script> 
+
+
+
+ <!-- Google Analytics Tracking code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83979019-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
