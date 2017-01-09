@@ -324,3 +324,166 @@ div.tabComponent label {
 
 <br><br>
 <h1 style="color:#3CCAE6">Project Assignment 2: Create an Accordion Component</h1>
+
+
+## <input type="checkbox" checked> Task 1: Creating the HTML Markup
+
+```html 
+<div class="accordion">
+  <ul>
+
+    <!-- Item 1 -->
+    <li>
+      <input id="appetizers" type="radio" name="menu"/>
+      <label for="appetizers">appetizers</label>
+      <div class="content">
+        <h3>Check our tasty apps!</h3>
+        <h4>Happy hour menu - half off!!</h4>
+        <p>Chicken Wings(6) - 5.99$</p>
+        <p>Calamari - 7.99$</p>
+        <p>Garlic breaded pickles - 4.59$</p>
+      </div>
+    </li>
+
+    <!-- Item 2 -->
+    <li>
+      <input id="entrees" type="radio" name="menu"/>
+      <label for="entrees">entrees</label>
+      <div class="content">
+        <h3>Check our tasty apps!</h3>
+        <h4>Happy hour menu - half off!!</h4>
+        <p>Chicken Wings(6) - 5.99$</p>
+        <p>Calamari - 7.99$</p>
+        <p>Garlic breaded pickles - 4.59$</p>
+      </div>
+    </li>
+
+    <!-- Item 3 -->
+    <li>
+      <input id="desserts" type="radio" name="menu"/>
+      <label for="desserts">desserts</label>
+      <div class="content">
+        <h3>Check our tasty apps!</h3>
+        <h4>Happy hour menu - half off!!</h4>
+        <p>Chicken Wings(6) - 5.99$</p>
+        <p>Calamari - 7.99$</p>
+        <p>Garlic breaded pickles - 4.59$</p>
+      </div>
+    </li>
+
+    <!-- Placeholder for Item 4 -->
+      <!-- Item 2 -->
+    <li>
+      <input id="soupsAndSalads" type="radio" name="menu"/>
+      <label for="soupsAndSalads">soups and salads</label>
+      <div class="content">
+        <h3>Salad Mania</h3>
+        <h4>Free salad all day</h4>
+        <p>Octopus Salad - <span>10.00$</span> free</p>
+        <p>Pasta Salad - <span>4.59$</span> free</p>
+      </div>
+    </li>
+
+  </ul>
+</div>
+```
+
+
+## <input type="checkbox" checked> Task 2: Inserting CSS Style Rules
+
+```css 
+
+.accordion {
+  border: 1px solid black;
+  width: 800px;
+  height:auto;
+  border-radius: 10px;
+}
+
+.accordion ul {
+  padding: 0;
+  margin: 10px auto;
+  width: 780px;
+  list-style:none;
+}
+
+
+.accordion label:hover  {
+  color: #fff;
+  background-color:#C1263F;
+  font-weight:600;
+}
+
+label {
+  margin-top: 2px;
+  border:1px solid black;
+  padding:10px;
+  font-size:20px;
+  color:#641C19;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-family: sans-serif;
+  background-color:#DB5A3F;
+  text-transform:uppercase;
+  transition: background-color .5s ease-out ;
+  display: block;
+  position: relative;
+  cursor:pointer;
+}
+
+.accordian input + label {
+  transition: all 1s ease-in-out;
+}
+
+.content {
+  overflow:hidden;
+  padding: 0 1em;
+  width:inherit;
+  height: 2px;
+  border: inherit;
+  background-color:#fff;
+  transition: all .5s ease-in-out; 
+  border:none;
+  font-family: sans-serif;
+}
+
+.content h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color:#4F1843;
+}
+
+.content h4 {
+  font-size:17px;
+}
+
+.content p {
+  color:#303740;
+  margin:2px;
+  font-size:17px;
+}
+
+.content span {
+  text-decoration:line-through;
+}
+
+[type="radio"] {
+  display:none;
+}
+
+[type="radio"]:checked ~ label {
+    color: #fff;
+  background-color:#C1263F;
+  font-weight:600;
+}
+
+[type="radio"]:checked  ~ .content {
+  height: 200px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+```
+<br>
+
+## <input type="checkbox" checked> Task 3: Adding a new Accordion Item
