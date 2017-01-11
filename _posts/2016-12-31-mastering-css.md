@@ -18,6 +18,248 @@ th, td {
     text-align:center;
     padding:10px;
 }
+
+
+
+.card {
+    height: 300px;
+    width: 600px;
+    position: relative;
+    -webkit-perspective: 300px;
+            perspective: 300px;
+    
+    -webkit-transition: -webkit-transform 1s;
+    
+   
+    margin: 50px auto;
+}
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: orange;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.back {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+    background: url("../images/backPhoto.jpg") no-repeat;
+    background-size: cover;
+}
+
+/*Front of Card*/
+
+.front {
+    background: url("../images/bg1.png") no-repeat;
+    background-size: cover;
+}
+
+.card:hover .front {
+    -webkit-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+    box-shadow: 0 15px 15px lightgrey;
+}
+
+.card:hover .back {
+    box-shadow: 20px 15px 15px lightgrey;
+}
+
+/* animation code */
+
+[type="radio"] {
+    display: none;
+}
+
+[type="radio"]:checked ~ .front {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+}
+
+[type="radio"]:checked ~ .back {
+    -webkit-transform:rotateX(0deg);
+            transform:rotateX(0deg);
+}
+
+/*end animation */
+
+.frontIntro {
+    position: relative;
+}
+
+.frontIntro h1 {
+    padding: 10px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 45px;
+    letter-spacing: 1px;
+    font-family: Arial, serif;
+}
+
+.aboutMe, .bookmarkFront p {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: #fff;
+    padding: 0;
+    margin-left: 22px;
+    top: 70px;
+    left: 25px;
+}
+
+p.aboutMe {
+  margin-right: 80px;
+}
+
+.frontIntro > p:nth-child(2) {
+    position: absolute;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: lightgray;
+    padding: 0;
+    margin: 0;
+    top: 70px;
+    left: 25px;
+}
+
+.frontIntro img {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    cursor: pointer;
+}
+
+.frontIntro img:hover {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+.front ul {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.front li {
+    display: inline-block;
+    margin: 0 10px 0 24px;
+}
+
+.front a {
+    font-variant: small-caps;
+    font-size: 15px;
+    text-decoration: none;
+    color: #C464E5;
+}
+
+.front a:hover {
+    color: #d47ec3;
+}
+
+.bookmarkFront {
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 4px;
+    width: 180px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.bookmarkFront img {
+    height: 50px;
+    width: 50px;
+}
+
+.socialMediaIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 250px;
+    height:45px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+
+.socialMediaIcons img:hover {
+    border-radius:50%;
+    border:3px solid #fff;
+}
+
+/* flip code*/
+
+
+
+
+
+
+
+/*Back Of Card*/
+
+
+.back img {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.back img:hover {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+#flipToFront[type="radio"]:checked ~ .front {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+}
+
+#flipToFront[type="radio"]:checked ~ .back {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+}
+
+
+.bottomName {
+    position: absolute;
+    bottom:10px;
+    left:20px;
+    background-color: #EFEDE0;
+    opacity:0.8;
+    border-radius:5px;
+}
+
+.bottomName p {
+    color:#7C30D2;
+    padding:5px;
+    margin: 0;
+}
 </style>
 
 <h1 style="color:#3CCAE6">Project Assignment 1: Create a Tabs Component</h1>
@@ -487,3 +729,353 @@ label {
 <br>
 
 ## <input type="checkbox" checked> Task 3: Adding a new Accordion Item
+
+
+<p data-height="501" data-theme-id="0" data-slug-hash="oBXpXW" data-default-tab="result" data-user="nopity" data-embed-version="2" data-pen-title="accordian tab" class="codepen">See the Pen <a href="http://codepen.io/nopity/pen/oBXpXW/">accordian tab</a> by oscar (<a href="http://codepen.io/nopity">@nopity</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<br><br>
+
+<h1 style="color:#3CCAE6">Project Assignment 3: Create a Business Card Component</h1>
+
+## <input type="checkbox" checked> Task 1: Updating HTML Markup
+
+```html 
+
+<section class="card">
+<input type="radio" id="flipIcon" name="flip">
+  
+   <div class="front">
+      <div class="frontIntro">
+         <h1>Oscar Rodriguez</h1>
+         <p>Full-Stack Developer</p>
+         <label for="flipIcon">
+            <img src="../images/ic_flip_black_24dp_2x.png">
+         </label>
+         <p class="aboutMe">Oscar is a front-end and backend developer who specializes in not knowing what to write about.</p>
+      </div>
+      <ul>
+         <li><a href="email">oscarrobertrodriguez@gmail.com</a></li>
+         <li><a href="https://www.oscarrobertrodriguez.github.io">OscarRR.com</a></li>
+      </ul>
+      <div class="bookmarkFront">
+         <img src="../images/enc1.png">
+         <p>Oscar Rodriguez <br> on <a href="#">Bov Academy</a></p>
+      </div>
+
+      <div class="socialMediaIcons">
+         <a href="#"><img src="../images/twitter.png"></a>
+         <a href="#"><img src="../images/github1.png"></a>
+         <a href="#"><img src="../images/facebook.png"></a>
+         <a href="#"><img src="../images/linkedin.png"></a>
+      </div>
+
+   </div>
+ <input type="radio" id="flipToFront" name="flip">
+   <div class="back">
+      <label for="flipToFront">
+         <img src="../images/ic_flip_black_24dp_2x.png">
+      </label>
+
+      <div class="bottomName">
+         <p>Oscar Rodriguez</p>
+      </div>
+
+   </div>
+</section>
+```
+
+## <input type="checkbox" checked> Task 2: Inserting CSS Style Rules
+
+## <input type="checkbox" checked> Task 3: Adding Vendor Prefixes
+
+```css 
+
+
+.card {
+    height: 300px;
+    width: 600px;
+    position: relative;
+    -webkit-perspective: 300px;
+            perspective: 300px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+    margin: 50px auto;
+}
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: orange;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.back {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+    background: url("project assets/backPhoto.jpg") no-repeat;
+    background-size: cover;
+}
+
+/*Front of Card*/
+
+.front {
+    background: url("project assets/bg1.png") no-repeat;
+    background-size: cover;
+}
+
+.card:hover .front {
+    -webkit-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+    box-shadow: 0 15px 15px lightgrey;
+}
+
+/* animation code */
+
+[type="radio"] {
+    display: none;
+}
+
+[type="radio"]:checked ~ .front {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+}
+
+[type="radio"]:checked ~ .back {
+    -webkit-transform:rotateX(0deg);
+            transform:rotateX(0deg);
+}
+
+/*end animation */
+
+.frontIntro {
+    position: relative;
+}
+
+.frontIntro h1 {
+    padding: 10px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 45px;
+    letter-spacing: 1px;
+    font-family: Arial, serif;
+}
+
+.aboutMe, .bookmarkFront p {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: #fff;
+    padding: 0;
+    margin-left: 22px;
+    top: 70px;
+    left: 25px;
+}
+
+.frontIntro > p:nth-child(2) {
+    position: absolute;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: lightgray;
+    padding: 0;
+    margin: 0;
+    top: 70px;
+    left: 25px;
+}
+
+.frontIntro img {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    cursor: pointer;
+}
+
+.frontIntro img:hover {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+.front ul {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.front li {
+    display: inline-block;
+    margin: 0 10px 0 24px;
+}
+
+.front a {
+    font-variant: small-caps;
+    font-size: 15px;
+    text-decoration: none;
+    color: #C464E5;
+}
+
+.front a:hover {
+    color: #d47ec3;
+}
+
+.bookmarkFront {
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 4px;
+    width: 180px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.bookmarkFront img {
+    height: 50px;
+    width: 50px;
+}
+
+.socialMediaIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 250px;
+    height:45px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+
+.socialMediaIcons img:hover {
+    border-radius:50%;
+    border:3px solid #fff;
+}
+
+/* flip code*/
+
+
+
+
+
+
+
+/*Back Of Card*/
+
+
+.back img {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.back img:hover {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+#flipToFront[type="radio"]:checked ~ .front {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+}
+
+#flipToFront[type="radio"]:checked ~ .back {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+}
+
+
+.bottomName {
+    position: absolute;
+    bottom:10px;
+    left:20px;
+    background-color: #EFEDE0;
+    opacity:0.8;
+    border-radius:5px;
+}
+
+.bottomName p {
+    color:#7C30D2;
+    padding:5px;
+    margin: 0;
+}
+
+```
+
+
+
+## <input type="checkbox" checked> Task 4: Create Your Own Digital Business Card
+
+
+
+<section class="card">
+<input type="radio" id="flipIcon" name="flip">
+  
+   <div class="front">
+      <div class="frontIntro">
+         <h1>Oscar Rodriguez</h1>
+         <p>Full-Stack Developer</p>
+         <label for="flipIcon">
+            <img src="../images/ic_flip_black_24dp_2x.png">
+         </label>
+         <p class="aboutMe">Oscar is a front-end and backend developer who specializes in not knowing what to write about.</p>
+      </div>
+      <ul>
+         <li><a href="email">oscarrobertrodriguez@gmail.com</a></li>
+         <li><a href="https://www.oscarrobertrodriguez.github.io">OscarRR.com</a></li>
+      </ul>
+      <div class="bookmarkFront">
+         <img src="../images/enc1.png">
+         <p>Oscar Rodriguez <br> on <a href="#">Bov Academy</a></p>
+      </div>
+
+      <div class="socialMediaIcons">
+         <a href="#"><img src="../images/twitter.png"></a>
+         <a href="#"><img src="../images/github1.png"></a>
+         <a href="#"><img src="../images/facebook.png"></a>
+         <a href="#"><img src="../images/linkedin.png"></a>
+      </div>
+
+   </div>
+ <input type="radio" id="flipToFront" name="flip">
+   <div class="back">
+      <label for="flipToFront">
+         <img src="../images/ic_flip_black_24dp_2x.png">
+      </label>
+
+      <div class="bottomName">
+         <p>Oscar Rodriguez</p>
+      </div>
+
+   </div>
+</section>
+
+
+<br><br>
+
+<h1 style="color:#3CCAE6">Project Assignment 4: Create a Simple Image Gallery</h1>
