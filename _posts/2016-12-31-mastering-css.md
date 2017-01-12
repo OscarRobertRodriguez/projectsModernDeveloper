@@ -27,7 +27,6 @@ th, td {
     position: relative;
     -webkit-perspective: 300px;
             perspective: 300px;
-    
     -webkit-transition: -webkit-transform 1s;
     
    
@@ -260,6 +259,10 @@ p.aboutMe {
     padding:5px;
     margin: 0;
 }
+
+
+
+
 </style>
 
 <h1 style="color:#3CCAE6">Project Assignment 1: Create a Tabs Component</h1>
@@ -1079,3 +1082,288 @@ label {
 <br><br>
 
 <h1 style="color:#3CCAE6">Project Assignment 4: Create a Simple Image Gallery</h1>
+<br>
+
+## <input type="checkbox" checked> Task 1: Complete the HTML structure
+
+
+
+```html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+
+
+   <!-- Thumbnails at the top -->
+   <ul class="thumbnailNav">
+
+      <li>
+         <label for="car1">
+            <img src="images/thumbNail-car1.jpg">
+         </label>
+      </li>
+
+      <li>
+         <label for="car2">
+            <img src="images/thumbNail-car2.jpg">
+         </label>
+      </li>
+
+      <li>
+         <label for="car3">
+            <img src="images/thumbNail-car3.jpg">
+         </label>
+      </li>
+
+      <li>
+         <label for="car4">
+            <img src="images/thumbNail-car4.jpg">
+         </label>
+      </li>
+
+      <li>
+         <label for="car5">
+            <img src="images/thumbNail-car5.jpg">
+         </label>
+      </li>
+
+
+      <div class="grabber"> <span>==</span>      <span>==</span>      <span>==</span> </div>
+   </ul>
+
+
+<!-- Container for backdrop image-->
+
+   <input type="radio" id="car" name="cars" checked>
+   <label>
+   <div class="bigImage firstImage">
+
+      <img src="images/car1.jpg">
+   </div>
+   </label>
+
+   <input type="radio" id="car1" name="cars">
+   <div class="bigImage">
+
+      <img src="images/car1.jpg">
+   </div>
+
+
+   <input type="radio" id="car2" name="cars">
+   <div class="bigImage">
+
+      <img src="images/car2.jpg">
+   </div>
+
+
+   <input type="radio" id="car3" name="cars">
+   <div class="bigImage">
+
+      <img src="images/car3.jpg">
+   </div>
+
+
+   <input type="radio" id="car4" name="cars">
+   <div class="bigImage">
+      <img src="images/car4.jpg">
+
+   </div>
+
+
+   <input type="radio" id="car5" name="cars">
+   <div class="bigImage">
+      <img src="images/car5.jpg">
+
+   </div>
+
+
+
+</div>
+
+
+</body>
+</html>
+```
+<br><br>
+
+## <input type="checkbox" checked> Task 2: Inserting CSS Style Rules
+
+```css 
+body {
+    box-sizing: border-box;
+}
+
+
+.container {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+
+
+/* thumbnail bar */
+
+ul.thumbnailNav {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 250px;
+    margin:0;
+    padding:0;
+    border: none;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: .8;
+    z-index: 1000;
+    transition: opacity .5s ease, transform 1s ease-in-out;
+    transform: translateX(-240px);
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+
+    .thumbnailNav li {
+        list-style-type: none;
+        width:200px;
+        display: inline-block;
+        padding:5px;
+    }
+
+
+    .thumbnailNav img {
+        width: 200px;
+        height:100px;
+        border-radius: 5px;
+    }
+
+    .thumbnailNav img:hover {
+        border: 2px solid yellow;
+
+    }
+
+    .thumbnailNav label {
+        cursor: pointer;
+    }
+
+
+    .thumbnailNav:hover {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .grabber {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right:0;
+        width:20px;
+        height: 250px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border:1px solid #fff;
+        background-color: white;
+        transform: translateX(20px);
+        cursor: pointer;
+    }
+
+        .grabber span {
+            margin-top: 20px;
+            color:grey;
+        }
+
+
+
+    /*Back drop image*/
+
+
+
+div.bigImage {
+    position: fixed;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity 1s ease-in, transform .7s ease;
+}
+
+    div.bigImage img {
+        width:100%;
+        height: 100%;
+    }
+
+
+    div.firstImage {
+        opacity: 1;
+        z-index: 4;
+        transform: translateX(0);
+    }
+
+
+
+
+
+    /*Animation for background image change*/
+
+
+[type="radio"]{
+    display: none;
+}
+
+
+
+    [type="radio"]:checked + .bigImage{
+    z-index: 5;
+    opacity:1;
+    transform: translateX(0);
+    }
+
+
+    [type="radio"]:not(:checked) + label {
+    display: none;
+    }
+
+    [type="radio"]:not(:checked) + .bigImage {
+    visibility: hidden;
+    }
+
+```
+
+
+<br><br>
+
+## <input type="checkbox" checked> Task 3: Adding a new Image
+
+
+[Finished Image Gallery Link](https://oscarrobertrodriguez.github.io/bov-imageGallery/)
+
+
+<br>
+<br>
+
+
+
+
+
+
+
