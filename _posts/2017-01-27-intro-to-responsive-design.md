@@ -117,3 +117,7 @@ For the purpose of this project I left out the portrait orientation so that it w
 <br>
 
 <h1 style="color:#3CCAE6">Project Assignment 2: Making Previous Projects Responsive</h1>
+
+
+1.[front-page of personal website ](https://oscarrobertrodriguez.github.io/)
+2.
