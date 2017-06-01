@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mastering the Dom"
+title:  "Handling Errors in Javascript"
 ---
 
 <h1 style="color:#3CCAE6">Project Assignment 1</h1>
